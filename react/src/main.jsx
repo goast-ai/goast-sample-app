@@ -6,20 +6,20 @@ import './index.css'
 
 if (import.meta.env.VITE_SENTRY_DSN) {
   Sentry.init({
-    dsn: import.meta.VITE_SENTRY_DSN,
+    dsn: import.meta.env.VITE_SENTRY_DSN,
     integrations: [
       new Sentry.BrowserTracing({
         // See docs for support of different versions of variation of react router
         // https://docs.sentry.io/platforms/javascript/guides/react/configuration/integrations/react-router/
-        routingInstrumentation: Sentry.reactRouterV6Instrumentation(
-          React.useEffect,
-          React.useLocation,
-          React.useNavigationType,
-          React.createRoutesFromChildren,
-          React.matchRoutes
-        ),
+        // routingInstrumentation: Sentry.reactRouterV6Instrumentation(
+        //   React.useEffect,
+        //   useLocation,
+        //   React.useNavigationType,
+        //   React.createRoutesFromChildren,
+        //   React.matchRoutes
+        // ),
       }),
-      new Sentry.Replay()
+      new Sentry.Replay(),
     ],
 
     // Set tracesSampleRate to 1.0 to capture 100%
@@ -39,6 +39,8 @@ if (import.meta.env.VITE_SENTRY_DSN) {
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <Sentry.ErrorBoundary fallback={<p>An error has occurred</p>}>
+      <App />
+    </Sentry.ErrorBoundary>
   </React.StrictMode>,
 )

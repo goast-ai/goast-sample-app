@@ -1,11 +1,9 @@
-import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import goastLogo from '/goast.svg'
 import './App.css'
+import DisplayUser from './DisplayUser'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <div>
@@ -18,12 +16,7 @@ function App() {
       </div>
       <h1>Goast + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <DisplayUser></DisplayUser>
       </div>
       <p className="read-the-docs">
         Click on the Goast logo to learn more
