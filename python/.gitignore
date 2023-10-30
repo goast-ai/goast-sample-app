@@ -1,0 +1,48 @@
+# Virtual environment
+venv/
+*.pyc
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+*.egg-info/
+
+# Flask session files
+instance/
+*.session
+
+# Configuration files (be careful if you add secrets in these!)
+*.cfg
+*.ini
+
+# Logs and databases
+*.log
+*.sqlite
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.vscode/
+*.swp
+*.swo
+*.idea/
+*.iml
+
+# Other
+*.bak
+*.tmp
