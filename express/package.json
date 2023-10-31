@@ -1,0 +1,15 @@
+{
+  "name": "goast-sample-express-app",
+  "version": "1.0.0",
+  "description": "This express project can be used to demonstrate goast's ability to fix crashes.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
