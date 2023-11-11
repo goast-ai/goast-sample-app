@@ -8,6 +8,7 @@ function DisplayUser() {
       <div>Firstname: {username.first}</div>
       <div>Lastname: {username.last}</div>
       <button onClick={() => setUsername(null)}>Clear Name</button>
+      <button className="new-button" onClick={() => console.log("Button clicked!")}>New Button</button>
     </>
   );
 }
