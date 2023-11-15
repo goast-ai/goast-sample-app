@@ -39,4 +39,11 @@ If you want to see the crash in action, you can run this sample yourself by inst
 
 ## Sentry integration
 
-If you want crashes to go to your sentry integration add a `.env.local` file with your DSN. Something like this: `VITE_SENTRY_DSN="<your dsn>"`
+If you want crashes to go to your sentry integration add a `.env.local` file with your DSN, as well as your `SENTRY_AUTH_TOKEN`. Something like this:
+
+```
+VITE_SENTRY_DSN="<your dsn>"
+SENTRY_AUTH_TOKEN="<your sentry auth token>"
+```
+
+And update the `vite.config.js` to include the `sentryVitePlugin` with your Sentry Org Id set.
