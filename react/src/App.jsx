@@ -1,6 +1,7 @@
 import reactLogo from './assets/react.svg'
 import goastLogo from '/goast.svg'
 import './App.css'
+import ErrorBoundary from './ErrorBoundary';
 import DisplayUser from './DisplayUser'
 
 function App() {
@@ -16,7 +17,9 @@ function App() {
       </div>
       <h1>Goast + React</h1>
       <div className="card">
-        <DisplayUser></DisplayUser>
+        <ErrorBoundary>
+          <DisplayUser></DisplayUser>
+        </ErrorBoundary>
       </div>
       <p className="read-the-docs">
         Click on the Goast logo to learn more
