@@ -5,8 +5,14 @@ function DisplayUser() {
 
   return (
     <>
-      <div>Firstname: {username.first}</div>
-      <div>Lastname: {username.last}</div>
+      {username ? (
+        <>
+          <div>Firstname: {username.first}</div>
+          <div>Lastname: {username.last}</div>
+        </>
+      ) : (
+        <div>No user selected</div>
+      )}
       <button onClick={() => setUsername(null)}>Clear Name</button>
     </>
   );
