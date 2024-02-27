@@ -71,4 +71,8 @@ If you want to see the crash in action, you can run this sample yourself.
 
 3. Run the Flask Server:
 
-   `python jokes_server.py`
+   `python jokes_server.py` or `python main.py` if you want to send an issue through sentry. If you are sending an issue through sentry, make sure to set your DSN.
+
+4. Trigger the crash (You may have to try multiple times):
+
+   `curl http://127.0.0.1:5000`
