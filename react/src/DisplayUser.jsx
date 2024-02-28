@@ -10,7 +10,7 @@ function DisplayUser() {
       <button onClick={() => setUsername(null)}>Clear Name</button>
     </>
   ) : (
-    <div>No user selected</div>
+    <div>There is no user</div>
   );
 }
 
