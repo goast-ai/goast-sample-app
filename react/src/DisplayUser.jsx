@@ -3,11 +3,27 @@ import { useState } from 'react';
 function DisplayUser() {
   const [username, setUsername] = useState({first: 'John', last: 'Smith'});
 
+  const handleClearName = () => {
+    setUsername({first: '', last: ''});
+  };
+
+  const renderUserInfo = () => {
+    if (username.first === '' && username.last === '') {
+      return <div>No user selected</div>;
+    } else {
+      return (
+        <>
+          <div>Firstname: {username.first}</div>
+          <div>Lastname: {username.last}</div>
+        </>
+      );
+    }
+  };
+
   return (
     <>
-      <div>Firstname: {username.first}</div>
-      <div>Lastname: {username.last}</div>
-      <button onClick={() => setUsername(null)}>Clear Name</button>
+      {renderUserInfo()}
+      <button onClick={handleClearName}>Clear Name</button>
     </>
   );
 }
