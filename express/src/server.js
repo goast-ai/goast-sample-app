@@ -36,12 +36,16 @@ app.get('/users', (req, res) => {
 });
 
 app.put('/users/:id', (req, res) => {
-    const userIndex = users.findIndex(u => u.id === req.params.id);
+    const userIndex = users.findIndex(u => u.id === parseInt(req.params.id, 10));
 
-    users[userIndex].name = req.body.name;
-    users[userIndex].age = req.body.age;
+    if (userIndex !== -1) {
+        users[userIndex].name = req.body.name;
+        users[userIndex].age = req.body.age;
 
-    res.json(users[userIndex]);
+        res.json(users[userIndex]);
+    } else {
+        res.status(404).send({ message: 'User not found' });
+    }
 });
 
 // The error handler must be registered before any other error middleware and after all controllers
